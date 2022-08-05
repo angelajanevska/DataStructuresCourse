@@ -10,15 +10,41 @@
             crossorigin="anonymous"></script>
     <style>
         body{
-            background-color: #d8e2ed;
             color: #004e98;
         }
         h3{
             color: #ff6700;
         }
         .btn{
-            background-color: #ff6700;
-            color:white;
+          background-color: #ff6700;
+          color:white;
+          border-radius: 4px;
+          border: none;
+          text-align: center;
+          transition: all 0.5s;
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .btn:after {
+          content: '\2192';
+          position: absolute;
+          opacity: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .btn:hover{
+          background-color: #ff6700;
+          padding-right: 24px;
+          padding-left:8px;
+        }
+
+        .btn:hover:after {
+          opacity: 2;
+          right: 10px;
         }
         .active{
             background-color: #004e98;
@@ -29,11 +55,10 @@
             color: #004e98;
         }
 
-
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg m-5 p-5">
+<nav class="navbar navbar-expand-lg m-5 mt-2 p-5">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Logo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -55,14 +80,33 @@
         </div>
     </div>
 </nav>
-<div style="display:inline-block; align: center;vertical-align: middle;">
-    <div style="display:inline-block;vertical-align: middle;" class="m-5 p-5 w-50">
-        <h2>Научи податочни структури во Java!</h2>
-        <p>Податочните структури помагаат да се разбере природата на проблемот на подлабоко ниво и со тоа подобро да се
-            разбере светот. Овој курс е ви овозможи подобро да ги изучите податочните структури и да ги примените за решавање на реални проблеми.
-        </p>
+<!--<div class="container row" style="display:inline-block; align: center; vertical-align: middle;">-->
+<!--    <div style="display:inline-block;vertical-align: middle;" class="ml-5 mt-5 p-5 w-50">-->
+
+
+<!--    </div>-->
+
+<!--</div>-->
+
+<div class="container">
+    <div class="row g-3">
+        <div class="col-6">
+            <div class="p-3 w-75" style="margin-top:30%; font-size:15px;">
+                <h2>Научи податочни структури во Java!</h2>
+                <p class="text-dark">Податочните структури помагаат да се разбере природата на проблемот на подлабоко ниво и со тоа
+                    подобро да се
+                    разбере светот. Овој курс ќе ви овозможи подобро да ги изучите податочните структури и да ги
+                    примените за
+                    решавање на реални проблеми.
+                </p>
+                <a type="button" href="{% url 'login_user' %}" class="btn w-25 text-white">Започни</a><br>
+            </div>
+        </div>
+        <div class="col-6 align-middle">
+            <div class=""><img src="https://stories.freepiklabs.com/storage/14074/Pair-Programming_Artboard-1.svg" class="w-100 ms-auto">
+            </div>
+        </div>
     </div>
-    <img src="http://i.stack.imgur.com/25Rl3.jpg" class="m-5 p-5 w-25 ms-auto">
 </div>
 </body>
 </html>
