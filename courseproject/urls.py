@@ -18,12 +18,16 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from courseapp.views import login_user, logout_user, register, home
+from courseapp.views import login_user, logout_user, register, home, intro, homework, quizzes, content
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('login/', login_user, name="login_user"),
-    path('logout/', logout_user, name="logout_user"),
-    path('register/', register, name="register"),
-    path('', home, name="home"),
-]+static('media/', document_root=settings.MEDIA_ROOT)
+                  path('admin/', admin.site.urls),
+                  path('login/', login_user, name="login_user"),
+                  path('logout/', logout_user, name="logout_user"),
+                  path('register/', register, name="register"),
+                  path('', home, name="home"),
+                  path('intro/', intro, name="intro"),
+                  path('homework/', homework, name="homework"),
+                  path('quizzes/', quizzes, name="quizzes"),
+                  path('content/', content, name="content"),
+              ] + static('media/', document_root=settings.MEDIA_ROOT)

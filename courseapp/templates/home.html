@@ -8,9 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
             crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Bellota Text' rel='stylesheet'>
     <style>
         body{
-            color: #004e98;
+            background-color: #d8e2ed;
+            color: #3a6ea5;
+            font-family: 'Bellota Text';
         }
         h3{
             color: #ff6700;
@@ -18,33 +21,10 @@
         .btn{
           background-color: #ff6700;
           color:white;
-          border-radius: 4px;
-          border: none;
-          text-align: center;
-          transition: all 0.5s;
-          cursor: pointer;
-          display: inline-block;
-          position: relative;
           transition: 0.5s;
         }
-
-        .btn:after {
-          content: '\2192';
-          position: absolute;
-          opacity: 0;
-          right: -20px;
-          transition: 0.5s;
-        }
-
         .btn:hover{
-          background-color: #ff6700;
-          padding-right: 24px;
-          padding-left:8px;
-        }
-
-        .btn:hover:after {
-          opacity: 2;
-          right: 10px;
+            color:black !important;
         }
         .active{
             background-color: #004e98;
@@ -54,13 +34,12 @@
             font-size: 20px;
             color: #004e98;
         }
-
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg m-5 mt-2 p-5">
+<nav class="navbar navbar-expand-lg ms-5 me-5 p-2 pt-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a href="{% url 'home' %}"><img src="../media/images/logo.png" class="navbar-brand w-50" style="margin-left:50px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -80,14 +59,6 @@
         </div>
     </div>
 </nav>
-<!--<div class="container row" style="display:inline-block; align: center; vertical-align: middle;">-->
-<!--    <div style="display:inline-block;vertical-align: middle;" class="ml-5 mt-5 p-5 w-50">-->
-
-
-<!--    </div>-->
-
-<!--</div>-->
-
 <div class="container">
     <div class="row g-3">
         <div class="col-6">

@@ -8,11 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
             crossorigin="anonymous"></script>
-
+    <link href='https://fonts.googleapis.com/css?family=Bellota Text' rel='stylesheet'>
     <style>
         body{
             background-color: #d8e2ed;
             color: #3a6ea5;
+            font-family: 'Bellota Text';
         }
         h3{
             color: #ff6700;
@@ -20,6 +21,7 @@
         .btn{
             background-color: #ff6700;
             color:white;
+            transition: 0.5s;
         }
         form{
          width: 400px;
@@ -34,7 +36,7 @@
     </style>
 </head>
 <body>
-<div class="nav navbar m-3"><h3>Лого</h3></div>
+<a href="{% url 'home' %}"><img src="../media/images/logo.png" style="margin-left:50px; width:20%"></a>
 <h2 class="d-flex justify-content-center">Најавa</h2>
 <div class="register container input-group d-flex justify-content-center mt-5">
     <form method="POST" action="">

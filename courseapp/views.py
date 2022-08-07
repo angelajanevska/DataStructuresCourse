@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, logout, login
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm
 
@@ -48,5 +49,32 @@ def register(request):
 
 
 def home(request):
+    if request.user.is_authenticated:
+        return redirect('intro')
     context = {}
     return render(request, 'home.html', context)
+
+
+@login_required(login_url='login')
+def intro(request):
+    context = {}
+    return render(request, 'intro.html', context)
+
+
+@login_required(login_url='login')
+def content(request):
+    context = {}
+    return render(request, 'content.html', context)
+
+
+@login_required(login_url='login')
+def quizzes(request):
+    context = {}
+    return render(request, 'quizzes.html', context)
+
+
+@login_required(login_url='login')
+def homework(request):
+    context = {}
+    return render(request, 'homework.html', context)
+
