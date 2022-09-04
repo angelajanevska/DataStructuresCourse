@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm
+from .models import Title
 
 
 def login_user(request):
@@ -69,7 +70,12 @@ def intro_to_java(request):
 
 @login_required(login_url='login')
 def content(request):
-    context = {}
+    chapter1 = Title.objects.filter(chapter__name='Што се податочни структури?')
+    chapter2 = Title.objects.filter(chapter__name='Класификација на податочните структури')
+    chapter3 = Title.objects.filter(chapter__name='Видови податочни структури')
+    chapter4 = Title.objects.filter(chapter__name='Комплексност на податочните структури')
+    context = {"titlesFirstChapter": chapter1, "titlesSecondChapter": chapter2, "titlesThirdChapter": chapter3,
+               "titlesLastChapter": chapter4}
     return render(request, 'content.html', context)
 
 
