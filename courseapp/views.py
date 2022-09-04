@@ -62,6 +62,12 @@ def intro(request):
 
 
 @login_required(login_url='login')
+def intro_to_java(request):
+    context = {}
+    return render(request, 'intro_to_java.html', context)
+
+
+@login_required(login_url='login')
 def content(request):
     context = {}
     return render(request, 'content.html', context)

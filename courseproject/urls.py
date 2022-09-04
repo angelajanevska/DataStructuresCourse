@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from courseapp.views import login_user, logout_user, register, home, intro, homework, quizzes, content
+from courseapp.views import login_user, logout_user, register, home, intro, homework, quizzes, content, intro_to_java
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
                   path('register/', register, name="register"),
                   path('', home, name="home"),
                   path('intro/', intro, name="intro"),
+                  path('intro-to-java/', intro_to_java, name="intro_to_java"),
                   path('homework/', homework, name="homework"),
                   path('quizzes/', quizzes, name="quizzes"),
                   path('content/', content, name="content"),
