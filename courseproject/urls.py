@@ -34,7 +34,6 @@ urlpatterns = [
                   path('quizzes/', quizzes, name="quizzes"),
                   path('content/', content, name="content"),
 
-
-                  url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-                  url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
+                  # url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+                  # url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
               ] + static('media/', document_root=settings.MEDIA_ROOT)
