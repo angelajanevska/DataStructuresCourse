@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, logout, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm
-from .models import Title
+from .models import Title, Quiz
 
 
 def login_user(request):
@@ -81,6 +81,7 @@ def content(request):
 
 @login_required(login_url='login')
 def quizzes(request):
+    queryset = Quiz.objects.all()
     context = {}
     return render(request, 'quizzes.html', context)
 

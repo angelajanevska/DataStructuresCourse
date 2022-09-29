@@ -1,10 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Homework</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Bellota Text' rel='stylesheet'>
+    <style>
+        html,body {
+        margin:0;
+        padding:0;
+        overflow-x:hidden;
+        }
+        body{
+            background-color: #d8e2ed;
+            color: #3a6ea5;
+            font-family: 'Bellota Text';
+            height:100%;
+        }
+        .btn{
+          background-color: #ff6700;
+          color:black;
+          transition: 0.5s;
+        }
+        .btn-blue{
+            background-color: #004e98;
+            color:white;
+            transition: 0.5s;
+        }
+        .active{
+            background-color: #004e98;
+            color: white !important;
+        }
+        .navbar{
+            font-size: 20px;
+            color: #004e98;
+        }
+        #content{
+            background-color: #2b6ba9;
+            color:white;
+            height:100%;
+        }
+        h5{
+            opacity: 70%;
+        }
+        a{
+            text-decoration:none;
+            color:white;
+        }
+    </style>
 </head>
 <body>
-<h2>homework</h2>
+<nav class="navbar navbar-expand-lg static-top">
+    <div class="container">
+        <a href="{% url 'home' %}" class="navbar-brand">
+            <img src="../media/images/logo.png" class="w-50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Почетна</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'content' %}">Материјали</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{% url 'quizzes' %}">Квизови</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'homework' %}">Домашни задачи</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout_user' %}">Одјави се</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="" id="content">
+    <div class="container p-5">
+        <div class="row m-4">
+            <div class="col">
+                <h5>Домашна работа за поглавје 1</h5>
+                <h3>Вовед во Java</h3>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white mt-3">Реши ја домашната</a><br>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white btn-blue mt-1">Прегледај го поглавјето</a><br>
+            </div>
+            <div class="col">
+                <h5>Домашна работа за поглавје 2</h5>
+                <h3>Поглавја</h3>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white mt-3">Реши ја домашната</a><br>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white btn-blue mt-1">Прегледај го поглавјето</a><br>
+            </div>
+            <div class="col">
+                <h5>Домашна работа за поглавје 3</h5>
+                <h3>Домашни работи</h3>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white mt-3">Реши ја домашната</a><br>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white btn-blue mt-1">Прегледај го поглавјето</a><br>
+            </div>
+        </div>
+        <br>
+        <div class="row m-4">
+            <div class="col">
+                <h5>Домашна работа за поглавје 4</h5>
+                <h3>Квизови за самоевалуација</h3>
+               <a type="button" href="{% url 'content' %}" class="btn w-100 text-white mt-3">Реши ја домашната</a><br>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white btn-blue mt-1">Прегледај го поглавјето</a><br>
+            </div>
+            <div class="col">
+                <h5>Домашна работа за поглавје 5</h5>
+                <h3>Завршен тест</h3>
+               <a type="button" href="{% url 'content' %}" class="btn w-100 text-white mt-3">Реши ја домашната</a><br>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white btn-blue mt-1">Прегледај го поглавјето</a><br>
+            </div>
+            <div class="col">
+                <h5>Домашна работа за поглавје 9</h5>
+                <h3>Финален тест за курсот</h3>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white mt-3">Реши ја домашната</a><br>
+                <a type="button" href="{% url 'content' %}" class="btn w-100 text-white btn-blue mt-1">Прегледај го поглавјето</a><br>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
